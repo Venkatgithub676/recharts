@@ -1,0 +1,29 @@
+/* Write your CSS here */
+
+.bg-con {
+  min-height: 100vh;
+  background-color: #161625;
+  padding: 30px 80px 30px 80px;
+}
+
+.logo-con {
+  display: flex;
+  align-items: center;
+}
+.website-logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.cowin-heading {
+  font-family: 'Roboto';
+  font-size: 20px;
+  color: #2cc6c6;
+}
+
+.cowin-vaccination {
+  font-family: 'Roboto';
+  color: #ffffff;
+  font-size: 30px;
+}
