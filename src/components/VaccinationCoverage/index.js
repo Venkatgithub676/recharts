@@ -1,44 +1,34 @@
 // Write your code here
 
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Legend,
-  ResponsiveContainer,
-} from 'recharts'
+import {BarChart, Bar, XAxis, YAxis, Legend} from 'recharts'
 import './index.css'
 
 const VaccinationCoverage = props => {
   const {lastSevenDaysVaccination} = props
 
-  console.log(lastSevenDaysVaccination)
   return (
-    <>
+    <div className="vaccination-con">
       <h1 className="heading">Vaccination Coverage</h1>
 
-      <ResponsiveContainer width="100%" height={400}>
-        <BarChart data={lastSevenDaysVaccination}>
-          <XAxis dataKey="vaccineDate" />
-          <YAxis
-            tick={{
-              stroke: 'gray',
-              strokeWidth: 1,
-            }}
-          />
-          <Legend
-            iconType="star"
-            verticalAlign="bottom"
-            layout="horizontal"
-            align="center"
-            wrapperStyle=""
-          />
-          <Bar name="dose1" fill="#2d87bb" dataKey="dose1" barSize="100%" />
-          <Bar name="dose2" fill="#f54394" dataKey="dose2" barSize="20%" />
-        </BarChart>
-      </ResponsiveContainer>
-    </>
+      <BarChart width={1200} height={300} data={lastSevenDaysVaccination}>
+        <XAxis dataKey="vaccine_date" />
+        <YAxis
+          tick={{
+            stroke: 'gray',
+            strokeWidth: 1,
+          }}
+        />
+        <Legend
+          iconType="square"
+          verticalAlign="bottom"
+          layout="horizontal"
+          align="center"
+          wrapperStyle=""
+        />
+        <Bar name="dose_1" fill="#2d87bb" dataKey="dose_1" barSize="20%" />
+        <Bar name="dose_2" fill="#f54394" dataKey="dose_2" barSize="20%" />
+      </BarChart>
+    </div>
   )
 }
 

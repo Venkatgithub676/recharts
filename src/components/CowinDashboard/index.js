@@ -28,28 +28,15 @@ class CowinDashboard extends Component {
 
   getData = async () => {
     this.setState({status: apiConstants.loading})
-    const apiUrl = 'https://apis.ccbp.in/covid-vaccination-data'
-
-    const response = await fetch(apiUrl)
+    const response = await fetch('https://apis.ccbp.in/covid-vaccination-data')
+    console.log(response)
     if (response.ok) {
       const data = await response.json()
-      // console.log(data)
+      console.log(data)
 
-      const lastSevenDaysVaccination = data.last_7_days_vaccination.map(
-        each1 => ({
-          vaccineDate: each1.vaccine_date,
-          dose1: each1.dose_1,
-          dose2: each1.dose_2,
-        }),
-      )
-      const vaccinationByAge = data.vaccination_by_age.map(each2 => ({
-        age: each2.age,
-        count: each2.count,
-      }))
-      const vaccinationByGender = data.vaccination_by_gender.map(each3 => ({
-        count: each3.count,
-        gender: each3.gender,
-      }))
+      const lastSevenDaysVaccination = data.last_7_days_vaccination
+      const vaccinationByAge = data.vaccination_by_age
+      const vaccinationByGender = data.vaccination_by_gender
       this.setState({
         lastSevenDaysVaccination,
         vaccinationByGender,
