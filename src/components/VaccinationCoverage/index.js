@@ -8,13 +8,16 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts'
+import './index.css'
 
 const VaccinationCoverage = props => {
   const {lastSevenDaysVaccination} = props
 
   console.log(lastSevenDaysVaccination)
   return (
-    <div>
+    <>
+      <h1 className="heading">Vaccination Coverage</h1>
+
       <ResponsiveContainer width="100%" height={400}>
         <BarChart data={lastSevenDaysVaccination}>
           <XAxis dataKey="vaccineDate" />
@@ -35,7 +38,7 @@ const VaccinationCoverage = props => {
           <Bar name="dose2" fill="#f54394" dataKey="dose2" barSize="20%" />
         </BarChart>
       </ResponsiveContainer>
-    </div>
+    </>
   )
 }
 

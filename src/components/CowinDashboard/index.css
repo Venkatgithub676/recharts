@@ -9,6 +9,7 @@
 .logo-con {
   display: flex;
   align-items: center;
+  margin-bottom: 30px;
 }
 .website-logo {
   width: 50px;
@@ -24,6 +25,31 @@
 
 .cowin-vaccination {
   font-family: 'Roboto';
+  color: #ffffff;
+  font-size: 30px;
+}
+
+.loader {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.failure-view-con {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.failure-img {
+  width: 400px;
+}
+.something-went-wrong {
+  font-family: 'Bree Serif';
   color: #ffffff;
   font-size: 30px;
 }
